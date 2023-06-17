@@ -7,12 +7,13 @@ import { ContentRoutes } from './routes';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { GRAY, PRIMARY } from '../colors';
 import TabBarAddButton from '../components/TabBarAddButton';
+import Calender from '../calender/Calender';
 
 const Tab = createBottomTabNavigator();
 
 const getTabBarIcon = ({ focused, color, size, name }) => {
   const iconName = focused ? name : `${name}-outline`;
-    return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
+  return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
 };
 
 const AddButtonScreen = () => null;
@@ -36,12 +37,20 @@ const ContentTab = () => {
         }}
       />
       <Tab.Screen
+        name={ContentRoutes.CALENDER}
+        component={Calender}
+        options={{
+          tabBarIcon: (props) => getTabBarIcon({ ...props, name: 'calendar' }),
+        }}
+      />
+
+      {/* <Tab.Screen
         name={ContentRoutes.LIST}
         component={ListScreen}
         options={{
           tabBarIcon: (props) => getTabBarIcon({ ...props, name: 'post' }),
         }}
-      />
+      /> */}
       <Tab.Screen
         name={'AddButton'}
         component={AddButtonScreen}
