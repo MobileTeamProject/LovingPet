@@ -26,3 +26,4 @@ npm install @expo/react-native-action-sheet
 npm install expo-splash-screen   
 npm install @react-native-async-storage/async-storage   
 npm install react-native-google-places-autocomplete   
+npm install react-native-keyboard-aware-scroll-view 
