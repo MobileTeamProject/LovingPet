@@ -4,7 +4,7 @@ export const BLACK = '#000000';
 export const PRIMARY = {
   LIGHT: '#996816',
   DEFAULT: '#826013',
-  DARK: '#6F4F28',
+  DARK: '#745757',
 };
 
 export const GRAY = {
