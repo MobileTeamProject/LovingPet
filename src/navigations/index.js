@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from '../api/auth';
-import { useUserState } from '../contexts/UserContext';
+import { useUserState } from '../components/authenticate/contexts/UserContext';
 import AuthStack from './AuthStack';
 import MainStack from './MainStack';
 import { Asset } from 'expo-asset';
