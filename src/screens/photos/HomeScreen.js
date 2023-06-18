@@ -10,6 +10,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BLACK, WHITE } from '../../colors';
 import { ContentRoutes } from '../../navigations/routes';
+import MyPageButton from '../../components/photos/MyPageButton';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -18,6 +19,9 @@ const HomeScreen = () => {
 
   return (
     <View style={[styles.container, { paddingTop: top }]}>
+      <View style={styles.homeButtonView}>
+        <MyPageButton navigation={navigation} />
+      </View>
       <View style={styles.topContainer}>
         <Image
           source={require('../../../assets/icon.png')}
@@ -52,7 +56,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: WHITE,
     paddingHorizontal: 20,
   },
@@ -81,6 +85,10 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     bottom: 30,
     left: 30,
+  },
+  homeButtonView: {
+    height: 70,
+    alignItems: 'flex-end',
   },
 });
 
