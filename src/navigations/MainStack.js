@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { WHITE } from '../colors';
-import HeaderLeft from '../components/HeaderLeft';
-import ImagePickerScreen from '../screens/ImagePickerScreen';
-import SelectPhotosScreen from '../screens/SelectPhotosScreen';
-import UpdateProfileScreen from '../screens/UpdateProfileScreen';
-import WriteTextScreen from '../screens/WriteTextScreen';
+import HeaderLeft from '../components/authenticate/HeaderLeft';
+import ImagePickerScreen from '../screens/photos/ImagePickerScreen';
+import SelectPhotosScreen from '../screens/photos/SelectPhotosScreen';
+import UpdateProfileScreen from '../screens/authenticate/UpdateProfileScreen';
+import WriteTextScreen from '../screens/photos/WriteTextScreen';
 import ContentTab from './ContentTab';
 import { MainRoutes } from './routes';
 

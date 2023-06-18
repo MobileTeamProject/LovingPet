@@ -9,17 +9,7 @@ const HeaderComp = ({ navigation, title }) => {
       <View style={styles.titleView}>
         <Text style={styles.headerTitle}>{title}</Text>
       </View>
-      <View style={{ flex: 1 }}>
-        {/* <Pressable
-          onPress={() => {
-            navigation.navigate('SignIn'); // 이게 되네??
-          }}
-        >
-          <View style={styles.logoutView}>
-            <Text style={styles.logoutTitle}>Logout</Text>
-          </View>
-        </Pressable> */}
-      </View>
+      <View style={{ flex: 1 }}></View>
     </View>
   );
 };

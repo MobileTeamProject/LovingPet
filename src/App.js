@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import Navigation from './navigations';
 import { LogBox } from 'react-native';
-import { UserProvier } from './contexts/UserContext';
+import { UserProvier } from './components/authenticate/contexts/UserContext';
 import { ActionSheetProvider } from '@expo/react-native-action-sheet';
 import useCachedResources from './useCachedResources';
 

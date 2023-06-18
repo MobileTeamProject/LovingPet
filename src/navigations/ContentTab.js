@@ -1,13 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
-import ListScreen from '../screens/ListScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import HomeScreen from '../screens/photos/HomeScreen';
+import ListScreen from '../screens/photos/ListScreen';
+import ProfileScreen from '../screens/authenticate/ProfileScreen';
 import { ContentRoutes } from './routes';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { GRAY, PRIMARY } from '../colors';
-import TabBarAddButton from '../components/TabBarAddButton';
-import Calender from '../calender/Calender';
-import CheckList from '../checkList/CheckList';
+import TabBarAddButton from '../components/photos/TabBarAddButton';
+import Calender from '../screens/calender/Calender';
+import CheckList from '../screens/checkList/CheckList';
 
 const Tab = createBottomTabNavigator();
 
