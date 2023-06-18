@@ -2,10 +2,11 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Pressable } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { HomeScreenRoute } from '../../navigations/routes';
 
 const MyPageButton = ({ navigation }) => {
   return (
-    <Pressable onPressIn={() => navigation.navigate('Profile')}>
+    <Pressable onPressIn={() => navigation.navigate(HomeScreenRoute.MYPAGE)}>
       <View style={styles.container}>
         <MaterialCommunityIcons
           name="account-circle"

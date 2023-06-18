@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/photos/HomeScreen';
+import HomeScreenNavigation from './HomeScreenNavigation';
 import ProfileScreen from '../screens/authenticate/ProfileScreen';
 import { ContentRoutes } from './routes';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -31,7 +31,7 @@ const ContentTab = () => {
     >
       <Tab.Screen
         name={ContentRoutes.HOME}
-        component={HomeScreen}
+        component={HomeScreenNavigation}
         options={{
           tabBarIcon: (props) => getTabBarIcon({ ...props, name: 'home' }),
         }}
