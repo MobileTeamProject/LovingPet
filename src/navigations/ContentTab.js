@@ -1,13 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import ListScreen from '../screens/ListScreen';
-import MapScreen from '../screens/MapScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { ContentRoutes } from './routes';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { GRAY, PRIMARY } from '../colors';
 import TabBarAddButton from '../components/TabBarAddButton';
 import Calender from '../calender/Calender';
+import CheckList from '../checkList/CheckList';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,14 +43,6 @@ const ContentTab = () => {
           tabBarIcon: (props) => getTabBarIcon({ ...props, name: 'calendar' }),
         }}
       />
-
-      {/* <Tab.Screen
-        name={ContentRoutes.LIST}
-        component={ListScreen}
-        options={{
-          tabBarIcon: (props) => getTabBarIcon({ ...props, name: 'post' }),
-        }}
-      /> */}
       <Tab.Screen
         name={'AddButton'}
         component={AddButtonScreen}
@@ -59,10 +51,10 @@ const ContentTab = () => {
         }}
       />
       <Tab.Screen
-        name={ContentRoutes.MAP}
-        component={MapScreen}
+        name={ContentRoutes.CHECKLIST}
+        component={CheckList}
         options={{
-          tabBarIcon: (props) => getTabBarIcon({ ...props, name: 'map' }),
+          tabBarIcon: (props) => getTabBarIcon({ ...props, name: 'note-edit' }),
         }}
       />
       <Tab.Screen
