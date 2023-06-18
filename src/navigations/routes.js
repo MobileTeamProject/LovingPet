@@ -16,5 +16,5 @@ export const ContentRoutes = {
   CALENDER: 'Calender',
   LIST: 'List',
   CHECKLIST: 'CheckList',
-  PROFILE: 'Profile',
+  COMMUNITY: 'Community',
 };

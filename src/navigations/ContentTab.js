@@ -1,6 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/photos/HomeScreen';
-import ListScreen from '../screens/photos/ListScreen';
 import ProfileScreen from '../screens/authenticate/ProfileScreen';
 import { ContentRoutes } from './routes';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -8,6 +7,7 @@ import { GRAY, PRIMARY } from '../colors';
 import TabBarAddButton from '../components/photos/TabBarAddButton';
 import Calender from '../screens/calender/Calender';
 import CheckList from '../screens/checkList/CheckList';
+import Community from '../screens/community/Community';
 
 const Tab = createBottomTabNavigator();
 
@@ -58,10 +58,11 @@ const ContentTab = () => {
         }}
       />
       <Tab.Screen
-        name={ContentRoutes.PROFILE}
-        component={ProfileScreen}
+        name={ContentRoutes.COMMUNITY}
+        component={Community}
         options={{
-          tabBarIcon: (props) => getTabBarIcon({ ...props, name: 'account' }),
+          tabBarIcon: (props) =>
+            getTabBarIcon({ ...props, name: 'comment-account' }),
         }}
       />
     </Tab.Navigator>
