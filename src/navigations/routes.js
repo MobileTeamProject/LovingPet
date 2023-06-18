@@ -14,7 +14,13 @@ export const MainRoutes = {
 export const ContentRoutes = {
   HOME: 'Home',
   CALENDER: 'Calender',
-  LIST: 'List',
   CHECKLIST: 'CheckList',
   COMMUNITY: 'Community',
+};
+
+export const HomeScreenRoute = {
+  HOME: 'HomeScreen',
+  MYPAGE: 'MyPage',
+  LIST: 'List',
+  MAP: 'Map',
 };

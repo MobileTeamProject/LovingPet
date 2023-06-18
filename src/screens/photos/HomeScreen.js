@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BLACK, WHITE } from '../../colors';
-import { ContentRoutes } from '../../navigations/routes';
+import { HomeScreenRoute } from '../../navigations/routes';
 import MyPageButton from '../../components/photos/MyPageButton';
 
 const HomeScreen = () => {
@@ -31,7 +31,7 @@ const HomeScreen = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <Pressable onPress={() => navigation.navigate(ContentRoutes.LIST)}>
+        <Pressable onPress={() => navigation.navigate(HomeScreenRoute.LIST)}>
           <Image
             source={require('../../../assets/home-clock.png')}
             style={[styles.image, { height }]}
@@ -41,7 +41,7 @@ const HomeScreen = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <Pressable onPress={() => navigation.navigate(ContentRoutes.MAP)}>
+        <Pressable onPress={() => navigation.navigate(HomeScreenRoute.MAP)}>
           <Image
             source={require('../../../assets/home-map.png')}
             style={[styles.image, { height }]}
