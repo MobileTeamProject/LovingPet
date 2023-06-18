@@ -15,6 +15,6 @@ export const ContentRoutes = {
   HOME: 'Home',
   CALENDER: 'Calender',
   LIST: 'List',
-  MAP: 'Map',
+  CHECKLIST: 'CheckList',
   PROFILE: 'Profile',
 };
