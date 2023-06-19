@@ -2,17 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import FeelSelector from './FeelSelector';
-import WheaterSelector from './WheaterSelector';
 
-const ContentHeader = ({
-  year,
-  month,
-  day,
-  setFeelCondition,
-  feelsIdx,
-  setWheaterCondition,
-  wheatersIdx,
-}) => {
+const ContentHeader = ({ year, month, day, setFeelCondition, feelsIdx }) => {
   const yearNow = new Date().getFullYear();
   const monthNow = new Date().getMonth() + 1;
   const dayNow = new Date().getDate();
@@ -43,19 +34,6 @@ const ContentHeader = ({
       );
     }
   };
-  const getWheaterSelector = () => {
-    if (isSelectorShow()) {
-      return (
-        <View style={styles.feelWheaterView}>
-          <Text style={styles.todayFeelWheater}>오늘 날씨는?</Text>
-          <WheaterSelector
-            setWheaterCondition={setWheaterCondition}
-            wheatersIdx={wheatersIdx}
-          />
-        </View>
-      );
-    }
-  };
   return (
     <View style={styles.container}>
       <View style={styles.dateView}>
@@ -64,7 +42,6 @@ const ContentHeader = ({
         </Text>
       </View>
       {getFeelSelector()}
-      {getWheaterSelector()}
     </View>
   );
 };
@@ -75,8 +52,6 @@ ContentHeader.propTypes = {
   day: PropTypes.number.isRequired,
   setFeelCondition: PropTypes.func.isRequired,
   feelsIdx: PropTypes.number.isRequired,
-  setWheaterCondition: PropTypes.func.isRequired,
-  wheatersIdx: PropTypes.number.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -88,13 +63,12 @@ const styles = StyleSheet.create({
     marginBottom: 7,
   },
   dateView: {
-    flex: 2,
+    flex: 1,
   },
   feelWheaterView: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    borderWidth: 1,
   },
   dateText: {
     color: '#000000',
