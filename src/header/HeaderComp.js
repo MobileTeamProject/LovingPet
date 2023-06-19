@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import BoldText from '../components/checkList/BoldText';
 
-const HeaderComp = ({ navigation, title }) => {
+const HeaderComp = ({ title }) => {
   return (
     <View style={styles.header}>
       <View style={{ flex: 1 }} />
       <View style={styles.titleView}>
-        <Text style={styles.headerTitle}>{title}</Text>
+        <BoldText style={styles.headerTitle}>{title}</BoldText>
       </View>
       <View style={{ flex: 1 }}></View>
     </View>
@@ -18,7 +19,6 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 30,
     color: '#000000',
-    fontWeight: 'bold',
   },
   header: {
     height: 65,

@@ -135,6 +135,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     flex: 1,
     zIndex: 1,
+    backgroundColor: '#fff',
   },
   emptyHeader: {
     fontSize: 30,

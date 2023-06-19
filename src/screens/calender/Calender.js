@@ -15,10 +15,8 @@ const Calendar = ({ navigation }) => {
 
   const [todosOfDates, setTodosOfDates] = useState({}); // [DATE]: {date: DATE, todos: {todos}}형 객체
   const [feelOfDates, setFeelOfDates] = useState({});
-  const [wheaterOfDates, setWheaterOfDates] = useState({});
   const [currentTodos, setCurrentTodos] = useState({}); // 할 일 목록(날짜 선택 시 여기에 todos가 들어감)
   const [currentFeelsIdx, setCurrentFeelsIdx] = useState(0);
-  const [currentWheaterIdx, setCurrentWheatherIdx] = useState(0);
 
   const setFeelCondition = (idx) => {
     // 그날 기분 선택
@@ -38,25 +36,6 @@ const Calendar = ({ navigation }) => {
       setFeelOfDates(currentFeelOfDate);
     }
     setCurrentFeelsIdx(idx);
-  };
-  const setWheaterCondition = (idx) => {
-    // 그날 날씨 선택
-    const dateID = year + '' + month + '' + day;
-    const wheaterOfDate = wheaterOfDates[dateID];
-    if (wheaterOfDate == undefined) {
-      const newWheaterOfDate = {
-        [dateID]: {
-          date: dateID,
-          wheaterIdx: idx,
-        },
-      };
-      setWheaterOfDates({ ...wheaterOfDates, ...newWheaterOfDate });
-    } else {
-      const currentWheaterOfDate = Object.assign({}, wheaterOfDates);
-      currentWheaterOfDate[dateID].wheaterIdx = idx;
-      setWheaterOfDates(currentWheaterOfDate);
-    }
-    setWheaterOfDates(idx);
   };
   const handleYearChange = (newYear) => {
     // 년도 변경시 변경 년도 지정
@@ -98,15 +77,9 @@ const Calendar = ({ navigation }) => {
       setCurrentTodos({});
     else setCurrentTodos(todosOfDates[year + '' + month + '' + day].todos);
 
-    if (feelOfDates[year + '' + month + '' + day] == undefined) {
+    if (feelOfDates[year + '' + month + '' + day] == undefined)
       setCurrentFeelsIdx(0);
-      setCurrentWheatherIdx(0);
-    } else {
-      setCurrentFeelsIdx(feelOfDates[year + '' + month + '' + day].feelIdx);
-      setCurrentWheatherIdx(
-        wheaterOfDates[year + '' + month + '' + day].wheaterIdx
-      );
-    }
+    else setCurrentFeelsIdx(feelOfDates[year + '' + month + '' + day].feelIdx);
   };
   const addTodo = () => {
     // 할 일 추가
@@ -160,10 +133,10 @@ const Calendar = ({ navigation }) => {
     setTodosOfDates(currentTodosOfDates);
   };
   return (
-    <KeyboardAwareScrollView>
+    <KeyboardAwareScrollView style={{ backgroundColor: '#fff' }}>
       <View style={styles.container}>
-        <View style={{ marginBottom: 40 }} />
-        <HeaderComp navigation={navigation} title={'Calender'} />
+        <View style={{ marginBottom: 47 }} />
+        <HeaderComp navigation={navigation} title={'CALENDER'} />
         <View style={styles.calView}>
           <GridCalender
             year={year}
@@ -181,8 +154,6 @@ const Calendar = ({ navigation }) => {
             day={day}
             setFeelCondition={setFeelCondition}
             feelsIdx={currentFeelsIdx}
-            setWheaterCondition={setWheaterCondition}
-            wheatersIdx={currentWheaterIdx}
           />
           <TodosComp
             todos={currentTodos}
@@ -200,6 +171,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   calView: {
     flex: 3,
