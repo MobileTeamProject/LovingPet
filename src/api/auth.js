@@ -31,7 +31,7 @@ export const signIn = async ({ email, password }) => {
 };
 
 const PHOTO_URL =
-  'https://firebasestorage.googleapis.com/v0/b/petdiary-dc77d.appspot.com/o/profile.png?alt=media&token=ead0083d-5aca-4f57-8797-a6aa213fe155';
+  'https://firebasestorage.googleapis.com/v0/b/fir-lovingpet.appspot.com/o/profile.png?alt=media';
 
 export const signUp = async ({ email, password }) => {
   const { user } = await createUserWithEmailAndPassword(
